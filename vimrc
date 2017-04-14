@@ -34,12 +34,18 @@ set incsearch                           "incrementally highlight search results"
 
 "=======  MAPPINGS  ==="
 
-
 "make editing vimrc easier"
 nmap ,ev :e ~/.vimrc<cr>
 
 "unhighlight search results"
 nmap ,<space> :nohlsearch<cr>           
+
+"simplify NERDTree; set CTR-1 to toggle it"
+nmap 1 :NERDTreeToggle<cr>
+
+"manage ctr-P (plugin)"
+nmap <C-r> :CtrlPBufTag<cr>
+nmap <C-f> :CtrlPMRUFiles<cr>
 
 "=======  AUTO-COMMANDS ====="
 
