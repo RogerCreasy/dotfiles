@@ -86,6 +86,15 @@ alias sshds='ssh rcreasy@10.10.88.33'
 alias sshbs='ssh rcreasy@10.10.88.31'
 alias sshms='ssh root@10.10.88.37'
 alias sshcs='ssh rcreasy@10.10.88.45'
+alias sshwork='ssh rcreasy@work.containergraphics.com'
 alias python=python3
 alias cd-coda='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/Documents/projects/coda'
 alias cd-mswin='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/'
+alias s='git status'
+alias projects='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/Documents/projects'
+
+# Homestead
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
+alias config='/usr/bin/git --git-dir=/home/rcreasy/.cnf/ --work-tree=/home/rcreasy'
