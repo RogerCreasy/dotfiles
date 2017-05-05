@@ -32,10 +32,20 @@ nmap <C-L> <C-W><C-L>
 set hlsearch                            "highlight search results"
 set incsearch                           "incrementally highlight search results"
 
+"======= PLUGINS ====="
+"
+    "---- NERDTREE ----"
+    let NERDTreeHijackNetrw = 0
+
+
+    "---- greplace---"
+    set grepprg=ag
+    let g:grep_cmd_opts = '--line-numbers --noheading'
+
 "=======  MAPPINGS  ==="
 
 "make editing vimrc easier"
-nmap ,ev :e ~/.vimrc<cr>
+
 
 "unhighlight search results"
 nmap ,<space> :nohlsearch<cr>           
@@ -46,10 +56,20 @@ nmap 1 :NERDTreeToggle<cr>
 "manage ctr-P (plugin)"
 nmap <C-r> :CtrlPBufTag<cr>
 nmap <C-f> :CtrlPMRUFiles<cr>
+nmap ,bt :bufdo tab split<CR>
 
 "=======  AUTO-COMMANDS ====="
 
 augroup autosourcing
     autocmd!
     autocmd BufWritePost .vimrc source %
-augroup END  
+augroup END 
+
+"====== Notes/Tips ======="
+"
+" zz - center cursor location on screen
+" ctrl-} - find the method definition of the method called at the cursor location
+" ,bt - place the current buffer in a tab
+" gt - next tab
+" di' - delete inside ' ' (' can be replaced with }]) etc)
+" vsp - vertical split

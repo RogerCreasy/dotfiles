@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/media/rcreasy/07A23F630C765E60/Users/CGC User/Documents/projects/docker/mydockerbuild'
-let g:netrw_dirhist_2='/home/rcreasy/dotfiles'
-let g:netrw_dirhist_3='/home/rcreasy'
-let g:netrw_dirhist_4='/home/rcreasy/Documents'
-let g:netrw_dirhist_5='/home/rcreasy/Documents/projects'
-let g:netrw_dirhist_6='/home/rcreasy/Documents/projects/sql2entity'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/roger/projects/linuxfordevs'
+let g:netrw_dirhist_2='/home/roger/projects/friedens'
+let g:netrw_dirhist_3='/home/roger/projects/friedens/routes'
+let g:netrw_dirhist_4='/home/roger/projects/friedens'

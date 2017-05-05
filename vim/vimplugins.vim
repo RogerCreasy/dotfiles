@@ -16,6 +16,9 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'joonty/vim-phpqa'
+Plugin 'rking/ag.vim'
+Plugin 'skwp/greplace.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
