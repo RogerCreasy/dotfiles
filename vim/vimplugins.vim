@@ -16,10 +16,13 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'joonty/vim-phpqa'
-"snipmate dependencies
+Plugin 'rking/ag.vim'
+Plugin 'skwp/greplace.vim'
+" snipmate and its dependencies (dependencies first)
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

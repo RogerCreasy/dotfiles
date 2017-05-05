@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/rcreasy/.oh-my-zsh
+  export ZSH=/home/roger/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -91,10 +91,13 @@ alias python=python3
 alias cd-coda='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/Documents/projects/coda'
 alias cd-mswin='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/'
 alias s='git status'
-alias projects='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/Documents/projects'
+#alias projects='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/Documents/projects'
+
+# Get aliases specific to this box
+source ~/.aliases
 
 # Homestead
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
-alias config='/usr/bin/git --git-dir=/home/rcreasy/.cnf/ --work-tree=/home/rcreasy'
+alias config='/usr/bin/git --git-dir=/home/roger/dotfiles/ --work-tree=/home/roger'
