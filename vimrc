@@ -37,6 +37,9 @@ set incsearch                           "incrementally highlight search results"
 "make editing vimrc easier"
 nmap ,ev :e ~/.vimrc<cr>
 
+"edit snippets
+nmap ,es :e ~/.vim/snippets/
+
 "unhighlight search results"
 nmap ,<space> :nohlsearch<cr>           
 
