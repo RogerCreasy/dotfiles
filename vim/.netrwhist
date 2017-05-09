@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/roger/projects/linuxfordevs'
 let g:netrw_dirhist_2='/home/roger/projects/friedens'
 let g:netrw_dirhist_3='/home/roger/projects/friedens/routes'
 let g:netrw_dirhist_4='/home/roger/projects/friedens'
+let g:netrw_dirhist_5='/home/rcreasy/dotfiles/vim/snippets'

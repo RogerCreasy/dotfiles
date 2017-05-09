@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'ctrlpvim/ctrlp.vim'
