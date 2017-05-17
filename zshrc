@@ -100,4 +100,4 @@ source ~/.aliases
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
-alias config='/usr/bin/git --git-dir=/home/roger/dotfiles/ --work-tree=/home/roger'
+alias config='/usr/bin/git --git-dir=/home/roger/dotfiles/.git --work-tree=/home/roger'
