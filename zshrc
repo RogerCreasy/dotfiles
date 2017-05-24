@@ -1,5 +1,11 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/roger/.oh-my-zsh
+if [ -e "/home/roger/.oh-my-zsh" ]; then
+    export ZSH=/home/roger/.oh-my-zsh
+elif [ -e "/home/rcreasy/.oh-my-zsh" ]; then
+    export ZSH=/home/rcreasy/.oh-my-zsh
+else
+    echo "oh-my! oh-my-zsh not found"
+fi    
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -88,10 +94,8 @@ alias sshms='ssh root@10.10.88.37'
 alias sshcs='ssh rcreasy@10.10.88.45'
 alias sshwork='ssh rcreasy@work.containergraphics.com'
 alias python=python3
-alias cd-coda='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/Documents/projects/coda'
-alias cd-mswin='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/'
 alias s='git status'
-#alias projects='cd /media/rcreasy/07A23F630C765E60/Users/CGC\ User/Documents/projects'
+
 
 # Get aliases specific to this box
 source ~/.aliases
@@ -101,3 +105,14 @@ function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
 alias config='/usr/bin/git --git-dir=/home/roger/dotfiles/.git --work-tree=/home/roger'
+
+
+if [ -e "/home/roger/.oh-my-zsh" ]; then
+    alias config='/usr/bin/git --git-dir=/home/roger/dotfiles/.git --work-tree=/home/roger/dotfiles'
+elif [ -e "/home/rcreasy/.oh-my-zsh" ]; then
+    alias config='/usr/bin/git --git-dir=/home/rcreasy/dotfiles/.git --work-tree=/home/rcreasy/dotfiles'
+    
+else
+    echo "user not found"
+fi    
+

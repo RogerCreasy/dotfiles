@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/roger/projects/friedens/resources/views/layouts'
 let g:netrw_dirhist_2='/home/roger/projects/friedens/resources/views'
