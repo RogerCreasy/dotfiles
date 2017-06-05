@@ -78,6 +78,13 @@ nmap <C-r> :CtrlPBufTag<cr>
 nmap <C-f> :CtrlPMRUFiles<cr>
 nmap ,bt :bufdo tab split<CR>
 
+"---- Laravel-Specific ----"
+nmap ,l4r :e app/Http/routes.php<cr>
+nmap ,lr :e routes/web.php<cr>
+nmap ,lm !php artisan make:
+nmap ,lfc :CtrlP app/Http/Controllers/<cr>
+nmap ,lfv :CtrlP resources/views/<cr>
+
 "=======  AUTO-COMMANDS ====="
 
 augroup autosourcing
