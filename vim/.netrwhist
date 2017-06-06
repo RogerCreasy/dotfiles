@@ -9,3 +9,5 @@ let g:netrw_dirhist_6='/home/roger/projects/friedens/resources/views'
 let g:netrw_dirhist_7='/home/roger/projects/friedens/resources/views/partials'
 let g:netrw_dirhist_8='/home/roger/projects/friedens/resources/views'
 let g:netrw_dirhist_9='/home/roger/projects/friedens/resources/views/partials'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/media/windows-data/Users/CGC User/Documents/projects/coda_laravel/app/Http/Middleware'
