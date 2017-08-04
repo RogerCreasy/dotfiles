@@ -7,16 +7,19 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+" 
+" Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'beanworks/vim-phpfmt'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'StanAngeloff/php.vim'
-"Plugin 'joonty/vim-phpqa'
+" Plugin 'joonty/vim-phpqa'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
 " snipmate and its dependencies (dependencies first)
