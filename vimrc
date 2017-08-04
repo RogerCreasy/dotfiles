@@ -22,6 +22,10 @@ set softtabstop=4   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
+set title           " show filename in window titlebar
+
+set autoread        " auto check for file changes
+
 nmap <Tab> :bnext<cr>
 nmap <S-Tab> :bprevious<cr>
 
@@ -56,7 +60,29 @@ set incsearch                           "incrementally highlight search results"
     set grepprg=ag
     let g:grep_cmd_opts = '--line-numbers --noheading'
 
-"=======  MAPPINGS  ==="
+    "---- PHPCS ----"
+    let g:phpqa_codesniffer_args = "--standard=PSR2"
+
+    "---- Syntastic ----"
+    let g:syntastic_php_checkers = ['php', 'phpcs']
+    let g:syntastic_php_phpcs_args = "--standard=PSR2 -n"
+
+    let php_sql_query=1
+    let php_htmlInStrings=1
+    let php_noShortTags=1
+    let php_folding=0
+    let php_baselib=1
+    let php_asp_tags=0
+    let php_parent_error_close=1
+    let php_parent_error_open=1
+    "let php_sync_method=10  " Sync only 10 lines backwards
+    "let php_alt_comparisons=1
+    "let php_alt_assignByReference=1
+
+    "---- PHPFMT ----"
+    let g:phpfmt_standard = 'PSR2'
+
+    "=======  MAPPINGS  ==="
 
 "make editing vimrc easier"
 nmap ,ev :e ~/.vimrc<cr>
@@ -77,13 +103,15 @@ nmap 1 :NERDTreeToggle<cr>
 nmap <C-r> :CtrlPBufTag<cr>
 nmap <C-f> :CtrlPMRUFiles<cr>
 nmap ,bt :bufdo tab split<CR>
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+
 
 "---- Laravel-Specific ----"
 nmap ,l4r :e app/Http/routes.php<cr>
 nmap ,lr :e routes/web.php<cr>
 nmap ,lm !php artisan make:
-nmap ,lfc :CtrlP app/Http/Controllers/<cr>
-nmap ,lfv :CtrlP resources/views/<cr>
+nmap ,lc :CtrlP app/Http/Controllers/<cr>
+nmap ,lv :CtrlP resources/views/<cr>
 
 "=======  AUTO-COMMANDS ====="
 
