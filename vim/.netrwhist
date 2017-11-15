@@ -1,19 +1,5 @@
 let g:netrw_dirhistmax  =10
-<<<<<<< HEAD
 let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/roger/projects/friedens/resources/views/layouts'
-let g:netrw_dirhist_2='/home/roger/projects/friedens/resources/views'
-let g:netrw_dirhist_3='/home/roger/projects/friedens/resources/views/layouts'
-let g:netrw_dirhist_4='/home/roger/projects/friedens/app/Http/Controllers'
-let g:netrw_dirhist_5='/home/roger/projects/friedens/resources/views/partials'
-let g:netrw_dirhist_6='/home/roger/projects/friedens/resources/views'
-let g:netrw_dirhist_7='/home/roger/projects/friedens/resources/views/partials'
-let g:netrw_dirhist_8='/home/roger/projects/friedens/resources/views'
-let g:netrw_dirhist_9='/home/roger/projects/friedens/resources/views/partials'
-let g:netrw_dirhist_cnt =1
-=======
-let g:netrw_dirhist_cnt =8
->>>>>>> bitbucket/master
 let g:netrw_dirhist_1='/media/windows-data/Users/CGC User/Documents/projects/coda_laravel/app/Http/Middleware'
 let g:netrw_dirhist_2='/media/rcreasy/07A23F630C765E60/Users/CGC User/Documents/projects/coda_laravel/resources/views/errors'
 let g:netrw_dirhist_3='/home/rcreasy/dotfiles/vim/snippets'
@@ -22,3 +8,4 @@ let g:netrw_dirhist_5='/home/rcreasy/dotfiles/vim/bundle/vim-phpqa'
 let g:netrw_dirhist_6='/media/rcreasy/07A23F630C765E60/Users/CGC User/Documents/projects/ansibleCODA/roles/web/tasks'
 let g:netrw_dirhist_7='/media/rcreasy/07A23F630C765E60/Users/CGC User/Documents/projects/ansibleCODA/roles/web'
 let g:netrw_dirhist_8='/media/rcreasy/07A23F630C765E60/Users/CGC User/Documents/projects/ansibleCODA/roles'
+let g:netrw_dirhist_9='/home/roger/projects/chassis/lib/Framework'

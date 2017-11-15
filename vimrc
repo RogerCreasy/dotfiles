@@ -105,6 +105,11 @@ nmap <C-f> :CtrlPMRUFiles<cr>
 nmap ,bt :bufdo tab split<CR>
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F4> :let _s=@/<Bar>:%s/^\s\+//e<Bar>:let @/=_s<Bar><CR>
 
 "---- Laravel-Specific ----"
 nmap ,l4r :e app/Http/routes.php<cr>
