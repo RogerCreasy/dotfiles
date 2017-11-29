@@ -54,7 +54,7 @@ alias sshcs='ssh rcreasy@10.10.88.45'
 alias sshwork='ssh rcreasy@work.containergraphics.com'
 alias python=python3
 alias s='git status'
-
+alias cept='php vendor/bin/codecept'
 
 # Get aliases specific to this box
 source ~/.aliases
