@@ -64,6 +64,11 @@ function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
 
+# CODA
+function coda() {
+    ( cd ~/.coda && vagrant $* )
+}
+
 if [ -e "/home/roger/.oh-my-zsh" ]; then
     alias config='/usr/bin/git --git-dir=/home/roger/dotfiles/.git --work-tree=/home/roger/dotfiles'
 elif [ -e "/home/rcreasy/.oh-my-zsh" ]; then

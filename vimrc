@@ -29,6 +29,8 @@ set autoread        " auto check for file changes
 nmap <Tab> :bnext<cr>
 nmap <S-Tab> :bprevious<cr>
 
+let mapleader = "," " set leader to ,
+
 "======= APPEARANCE ==="
 
 colorscheme atom-dark-256
@@ -66,6 +68,9 @@ set incsearch                           "incrementally highlight search results"
     "---- Syntastic ----"
     let g:syntastic_php_checkers = ['php', 'phpcs']
     let g:syntastic_php_phpcs_args = "--standard=PSR2 -n"
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
 
     let php_sql_query=1
     let php_htmlInStrings=1
@@ -82,10 +87,18 @@ set incsearch                           "incrementally highlight search results"
     "---- PHPFMT ----"
     let g:phpfmt_standard = 'PSR2'
 
+    " PHP CS Fixer
+    let g:php_cs_fixer_path = "~/.composer/vendor/bin/php-cs-fixer"
+    let g:php_cs_fixer_rules = "@PSR2"                " options: --rules (default:@PSR2)
+    let g:php_cs_fixer_php_path = "/usr/bin/php"      " Path to PHP
+    let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+    let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+    let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+    
     "=======  MAPPINGS  ==="
 
 "make editing vimrc easier"
-nmap ,ev :e ~/.vimrc<cr>
+nmap <leader>ev :e ~/.vimrc<cr>
 
 "edit snippets
 nmap ,es :e ~/.vim/snippets/
@@ -105,6 +118,8 @@ nmap <C-f> :CtrlPMRUFiles<cr>
 nmap ,bt :bufdo tab split<CR>
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
+" CS Fixer
+nnoremap <leader>pf :call PhpCsFixerFixFile()<cr>
 
 "---- Laravel-Specific ----"
 nmap ,l4r :e app/Http/routes.php<cr>
