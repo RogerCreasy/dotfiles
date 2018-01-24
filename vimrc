@@ -69,7 +69,7 @@ set incsearch                           "incrementally highlight search results"
     let g:syntastic_php_checkers = ['php', 'phpcs']
     let g:syntastic_php_phpcs_args = "--standard=PSR2 -n"
     let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_auto_loc_list = 0
     let g:syntastic_check_on_open = 1
 
     let php_sql_query=1
@@ -120,6 +120,8 @@ let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 " CS Fixer
 nnoremap <leader>pf :call PhpCsFixerFixFile()<cr>
+nmap ^[2 :lopen<cr>
+nmap ^[3 :lclose<cr>
 
 "---- Laravel-Specific ----"
 nmap ,l4r :e app/Http/routes.php<cr>
