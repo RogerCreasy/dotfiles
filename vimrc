@@ -94,7 +94,16 @@ set incsearch                           "incrementally highlight search results"
     let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
     let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
     let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
-    
+
+    "---- Ultisnip ----"
+    " Trigger configuration. Do not use <tab> if you use
+    " https://github.com/Valloric/YouCompleteMe.
+    "let g:UltiSnipsExpandTrigger="<tab>"
+    "let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    "let g:UltiSnipsSnippetDirectories='~/dotfiles/vim/UltiSnips'
+    "
+
     "=======  MAPPINGS  ==="
 
 "make editing vimrc easier"
@@ -118,16 +127,13 @@ nmap <C-f> :CtrlPMRUFiles<cr>
 nmap ,bt :bufdo tab split<CR>
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
-<<<<<<< HEAD
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-"Remove all trailing whitespace by pressing F5
+"Remove all leading whitespace by pressing F5
 nnoremap <F4> :let _s=@/<Bar>:%s/^\s\+//e<Bar>:let @/=_s<Bar><CR>
-=======
 " CS Fixer
 nnoremap <leader>pf :call PhpCsFixerFixFile()<cr>
->>>>>>> 8708d780d50610b3a11f3374c14f1acc50108a6e
 
 "---- Laravel-Specific ----"
 nmap ,l4r :e app/Http/routes.php<cr>
