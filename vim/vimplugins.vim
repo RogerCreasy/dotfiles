@@ -30,7 +30,10 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'fatih/vim-go'
 " PHP CS Fixer
 Plugin 'stephpy/vim-php-cs-fixer'
-
+" Markdown Preview in browser
+Plugin 'shime/vim-livedown'
+" Ultisnips
+"Plugin 'SirVer/ultisnips'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
