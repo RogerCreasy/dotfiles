@@ -88,13 +88,23 @@ set incsearch                           "incrementally highlight search results"
     let g:phpfmt_standard = 'PSR2'
 
     " PHP CS Fixer
-    let g:php_cs_fixer_path = "~/.composer/vendor/bin/php-cs-fixer"
-    let g:php_cs_fixer_rules = "@PSR2"                " options: --rules (default:@PSR2)
+    let g:php_cs_fixer_path = "/home/roger/.config/composer/vendor/friendsofphp/php-cs-fixer"
+    "~/.composer/vendor/bin/php-cs-fixer"
+    "let g:php_cs_fixer_rules = "@PSR2"                " options: --rules (default:@PSR2)
     let g:php_cs_fixer_php_path = "/usr/bin/php"      " Path to PHP
-    let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+    let g:php_cs_fixer_enable_default_mapping = 0     " Enable the mapping by default (<leader>pcd)
     let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
     let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
-    
+
+    "---- Ultisnip ----"
+    " Trigger configuration. Do not use <tab> if you use
+    " https://github.com/Valloric/YouCompleteMe.
+    "let g:UltiSnipsExpandTrigger="<tab>"
+    "let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    "let g:UltiSnipsSnippetDirectories='~/dotfiles/vim/UltiSnips'
+    "
+
     "=======  MAPPINGS  ==="
 
 "make editing vimrc easier"
@@ -121,6 +131,11 @@ nmap <C-f> :CtrlPMRUFiles<cr>
 nmap ,bt :bufdo tab split<CR>
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+"Remove all leading whitespace by pressing F5
+nnoremap <F4> :let _s=@/<Bar>:%s/^\s\+//e<Bar>:let @/=_s<Bar><CR>
 " CS Fixer
 nnoremap <leader>pf :call PhpCsFixerFixFile()<cr>
 nmap ^[2 :lopen<cr>
