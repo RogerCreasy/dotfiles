@@ -101,7 +101,10 @@ set incsearch                           "incrementally highlight search results"
 nmap <leader>ev :e ~/.vimrc<cr>
 
 "edit snippets
-nmap ,es :e ~/.vim/snippets/
+nmap ,es :e ~/.vim/snippets/<cr>
+
+"edit zshrc
+nmap <leader>ez :e ~/.zshrc<cr>
 
 " write, then close the buffer
 nmap ,wbd :w<cr> :bd<cr>
