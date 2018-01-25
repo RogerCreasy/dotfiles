@@ -54,7 +54,7 @@ alias sshcs='ssh rcreasy@10.10.88.45'
 alias sshwork='ssh rcreasy@work.containergraphics.com'
 alias python=python3
 alias s='git status'
-
+alias cept='php vendor/bin/codecept'
 
 # Get aliases specific to this box
 source ~/.aliases
@@ -83,7 +83,13 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 PATH=$PATH:/home/rcreasy/tools/tmux-powerline:~/home/rcreasy/.local/bin
 
 # Composer
-PATH=$PATH:/home/rcreasy/.composer/vendor/bin/
+if [ -d "/home/rcreasy/" ]; then
+    PATH=$PATH:/home/rcreasy/.composer/vendor/bin/
+elif [ -d "/home/roger/" ]; then
+    PATH=$PATH:/home/roger/.config/composer/vendor:/home/roger/.config/composer/vendor/friendsofphp/php-cs-fixer
+else
+    echo "user not found"
+fi    
 
 # GOLANG
 PATH=$PATH:/usr/local/go/bin

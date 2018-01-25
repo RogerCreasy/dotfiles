@@ -26,9 +26,14 @@ Plugin 'skwp/greplace.vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
+" Golang plugins
+Plugin 'fatih/vim-go'
 " PHP CS Fixer
 Plugin 'stephpy/vim-php-cs-fixer'
-
+" Markdown Preview in browser
+Plugin 'shime/vim-livedown'
+" Ultisnips
+"Plugin 'SirVer/ultisnips'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
