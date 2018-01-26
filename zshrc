@@ -84,7 +84,7 @@ PATH=$PATH:/home/rcreasy/tools/tmux-powerline:~/home/rcreasy/.local/bin
 
 # Composer
 if [ -d "/home/rcreasy/" ]; then
-    PATH=$PATH:/home/rcreasy/.composer/vendor/bin/
+    PATH=$PATH:/home/rcreasy/.composer/vendor/bin/:/home/rcreasy/.composer/vendor/friendsofphp/php-cs-fixer
 elif [ -d "/home/roger/" ]; then
     PATH=$PATH:/home/roger/.config/composer/vendor:/home/roger/.config/composer/vendor/friendsofphp/php-cs-fixer
 else

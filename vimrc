@@ -88,9 +88,7 @@ set incsearch                           "incrementally highlight search results"
     let g:phpfmt_standard = 'PSR2'
 
     " PHP CS Fixer
-    let g:php_cs_fixer_path = "/home/roger/.config/composer/vendor/friendsofphp/php-cs-fixer"
-    "~/.composer/vendor/bin/php-cs-fixer"
-    "let g:php_cs_fixer_rules = "@PSR2"                " options: --rules (default:@PSR2)
+    let g:php_cs_fixer_rules = "@PSR2"                " options: --rules (default:@PSR2)
     let g:php_cs_fixer_php_path = "/usr/bin/php"      " Path to PHP
     let g:php_cs_fixer_enable_default_mapping = 0     " Enable the mapping by default (<leader>pcd)
     let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
@@ -136,9 +134,10 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 "Remove all leading whitespace by pressing F5
 nnoremap <F4> :let _s=@/<Bar>:%s/^\s\+//e<Bar>:let @/=_s<Bar><CR>
-" CS Fixer
-nnoremap <leader>pf :call PhpCsFixerFixFile()<cr>
-nmap ^[2 :lopen<cr>
+
+" CS Fixer 
+nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR> 
+nmap  ^[2 :lopen<cr>
 nmap ^[3 :lclose<cr>
 
 "---- Laravel-Specific ----"
