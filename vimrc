@@ -38,8 +38,8 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-
-set linespace=25
+set guifont=Monospace\ 12
+set linespace=30
 
 "======= SCREEN MANAGEMENT ==="
 
@@ -108,6 +108,12 @@ set incsearch                           "incrementally highlight search results"
 "make editing vimrc easier"
 nmap <leader>ev :e ~/.vimrc<cr>
 
+"edit aliases
+nmap ,ea :e ~/.aliases<cr>
+
+"edit plugins
+nmap ,ep :e ~/.vim/vimplugins.vim<cr>
+
 "edit snippets
 nmap ,es :e ~/.vim/snippets/<cr>
 
@@ -132,7 +138,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|git'
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-"Remove all leading whitespace by pressing F5
+"Remove all leading whitespace by pressing F4
 nnoremap <F4> :let _s=@/<Bar>:%s/^\s\+//e<Bar>:let @/=_s<Bar><CR>
 
 " CS Fixer 
