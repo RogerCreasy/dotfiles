@@ -25,7 +25,7 @@ Plugin 'StanAngeloff/php.vim'
 " snipmate and its dependencies (dependencies first)
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
+"Plugin 'garbas/vim-snipmate'
 " Golang plugins
 Plugin 'fatih/vim-go'
 " PHP CS Fixer
@@ -33,7 +33,7 @@ Plugin 'stephpy/vim-php-cs-fixer'
 " Markdown Preview in browser
 Plugin 'shime/vim-livedown'
 " Ultisnips
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 " Vim IDE Perl
 Plugin 'vim-scripts/perl-support.vim'
 "find syntax highlighting issues

@@ -1,4 +1,4 @@
 ~/.ssh
 !~/.ssh/config
 ~/dotfiles/vim/.netrwhist
-vim/bundle/SyntaxAttr.vim/
+vim/bundle/**
