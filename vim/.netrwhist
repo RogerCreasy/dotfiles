@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/roger/.ssh'
 let g:netrw_dirhist_2='/home/roger/projects/chassis'
 let g:netrw_dirhist_3='/home/roger/projects'
 let g:netrw_dirhist_4='/home/roger'
 let g:netrw_dirhist_5='/home/roger/dotfiles/vim'
 let g:netrw_dirhist_6='/home/roger'
+let g:netrw_dirhist_7='/home/roger/dotfiles'

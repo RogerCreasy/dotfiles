@@ -34,7 +34,7 @@ let mapleader = "," " set leader to ,
 "======= APPEARANCE ==="
 
 colorscheme atom-dark-256
-set guioptions-=r
+"set guioptions-=r
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
@@ -97,10 +97,10 @@ set incsearch                           "incrementally highlight search results"
     "---- Ultisnip ----"
     " Trigger configuration. Do not use <tab> if you use
     " https://github.com/Valloric/YouCompleteMe.
-    "let g:UltiSnipsExpandTrigger="<tab>"
-    "let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-    "let g:UltiSnipsSnippetDirectories='~/dotfiles/vim/UltiSnips'
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsSnippetDirectories=["UltiSnips"]
     "
 
     "=======  MAPPINGS  ==="
@@ -109,22 +109,22 @@ set incsearch                           "incrementally highlight search results"
 nmap <leader>ev :e ~/.vimrc<cr>
 
 "edit aliases
-nmap ,ea :e ~/.aliases<cr>
+nmap <leader>ea :e ~/.aliases<cr>
 
 "edit plugins
-nmap ,ep :e ~/.vim/vimplugins.vim<cr>
+nmap <leader>ep :e ~/.vim/vimplugins.vim<cr>
 
 "edit snippets
-nmap ,es :e ~/.vim/snippets/<cr>
+nmap <leader>es :e ~/.vim/UltiSnips/<cr>
 
 "edit zshrc
 nmap <leader>ez :e ~/.zshrc<cr>
 
 " write, then close the buffer
-nmap ,wbd :w<cr> :bd<cr>
+nmap <leader>wbd :w<cr> :bd<cr>
 
 "unhighlight search results"
-nmap ,<space> :nohlsearch<cr>           
+nmap <leader>space> :nohlsearch<cr>           
 
 "simplify NERDTree; set CTR-1 to toggle it"
 nmap 1 :NERDTreeToggle<cr>
@@ -132,7 +132,7 @@ nmap 1 :NERDTreeToggle<cr>
 "manage ctr-P (plugin)"
 nmap <C-r> :CtrlPBufTag<cr>
 nmap <C-f> :CtrlPMRUFiles<cr>
-nmap ,bt :bufdo tab split<CR>
+nmap <leader>bt :bufdo tab split<CR>
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 "Remove all trailing whitespace by pressing F5
@@ -147,11 +147,11 @@ nmap  ^[2 :lopen<cr>
 nmap ^[3 :lclose<cr>
 
 "---- Laravel-Specific ----"
-nmap ,l4r :e app/Http/routes.php<cr>
-nmap ,lr :e routes/web.php<cr>
-nmap ,lm !php artisan make:
-nmap ,lc :CtrlP app/Http/Controllers/<cr>
-nmap ,lv :CtrlP resources/views/<cr>
+nmap <leader>l4r :e app/Http/routes.php<cr>
+nmap <leader>lr :e routes/web.php<cr>
+nmap <leader>lm !php artisan make:
+nmap <leader>lc :CtrlP app/Http/Controllers/<cr>
+nmap <leader>lv :CtrlP resources/views/<cr>
 
 "=======  AUTO-COMMANDS ====="
 
