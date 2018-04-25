@@ -1,0 +1,60 @@
+
+snippet met "public method" b
+	public function ${1} () {
+	${2}
+	}
+endsnippet
+snippet pmet "private method" b
+	private function ${1} () {
+	${2}
+	}
+endsnippet
+
+snippet smet "static method" b
+	public static function ${1} () {
+	${2}
+	}
+endsnippet
+
+snippet rg
+	Route::get('${1}', '${2}');
+endsnippet
+
+snippet rga
+	Route::get('${1}', function () {
+		${2}
+	});
+endsnippet
+
+snippet rp
+	Route::post('${1}', '${2}');
+endsnippet
+
+snippet rpa
+	Route::post('${1}', function () {
+		${2}
+	});
+endsnippet
+
+snippet $
+	$this->${1}
+endsnippet
+
+snippet new
+<?php
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+* 
+* Author: Roger Creasy
+* Email: roger@rogercreasy.com
+* Date: `!v strftime("%c")`
+* Version: .1
+*/
+endsnippet
