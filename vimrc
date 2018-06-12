@@ -124,7 +124,7 @@ nmap <leader>ez :e ~/.zshrc<cr>
 nmap <leader>wbd :w<cr> :bd<cr>
 
 "unhighlight search results"
-nmap <leader>space> :nohlsearch<cr>           
+nmap <leader><space> :nohlsearch<cr>           
 
 "simplify NERDTree; set CTR-1 to toggle it"
 nmap 1 :NERDTreeToggle<cr>
@@ -153,6 +153,31 @@ nmap <leader>lm !php artisan make:
 nmap <leader>lc :CtrlP app/Http/Controllers/<cr>
 nmap <leader>lv :CtrlP resources/views/<cr>
 
+"---- GOLANG-Specific ----"
+augroup go
+    autocmd!
+    " Show by default 4 spaces for a tab
+    autocmd BufNewFile,BufRead *.go setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+    " :GoBuild and :GoTestCompile
+    autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+    " :GoTest
+    autocmd FileType go nmap <leader>t  <Plug>(go-test)
+    
+    " :GoRun
+    autocmd FileType go nmap <leader>r  <Plug>(go-run)
+    
+    " :GoDoc
+    autocmd FileType go nmap <Leader>d <Plug>(go-doc)
+    
+    " :GoCoverageToggle
+    autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+    
+    " :GoInfo
+    autocmd FileType go nmap <Leader>i <Plug>(go-info)
+    
+    " :GoMetaLinter
+    autocmd FileType go nmap <Leader>l <Plug>(go-metalinter)
+augroup END
 "=======  AUTO-COMMANDS ====="
 
 augroup autosourcing

@@ -11,7 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'tpope/vim-fugitive'
 "Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-surround'
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 "Plugin 'beanworks/vim-phpfmt'
 " plugin from http://vim-scripts.org/vim/scripts.html

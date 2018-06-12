@@ -82,7 +82,12 @@ fi
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 PATH=$PATH:/home/rcreasy/tools/tmux-powerline:~/home/rcreasy/.local/bin
 
+# tmuxinator
+#
+#source $HOME/dotfiles/bin/tmuxinator.zsh
+
 # Composer
+
 if [ -d "/home/rcreasy/" ]; then
     PATH=$PATH:/home/rcreasy/.composer/vendor/bin/:/home/rcreasy/.composer/vendor/friendsofphp/php-cs-fixer
 elif [ -d "/home/roger/" ]; then
@@ -93,3 +98,16 @@ fi
 
 # GOLANG
 PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOBIN="$GOPATH/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/roger/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/home/roger/tools/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/roger/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/roger/tools/google-cloud-sdk/completion.zsh.inc'; fi
+
+# fuzzy finf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+PATH=$PATH:/home/roger/tools/fuz
+
