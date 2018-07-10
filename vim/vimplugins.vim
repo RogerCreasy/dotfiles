@@ -38,6 +38,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'vim-scripts/perl-support.vim'
 "find syntax highlighting issues
 Plugin 'vim-scripts/SyntaxAttr.vim'
+" VimWiki
+Plugin 'vimwiki/vimwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
