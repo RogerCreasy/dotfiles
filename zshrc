@@ -57,7 +57,7 @@ alias s='git status'
 alias cept='php vendor/bin/codecept'
 
 # Get aliases specific to this box
-source ~/.aliases
+source ~/dotfiles/aliases
 
 # Homestead
 function homestead() {

@@ -1,0 +1,88 @@
+alias homesteadup='cd ~/Homestead/ && vagrant up'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias nowhite='for file in *;do mv $file ${file// /_};done'
+alias pu='phpunit'
+alias vpu='./vendor/bin/phpunit'
+alias dockerup='systemctl start docker'
+
+project() {
+       if [ $# -eq 0 ]; then
+           echo "Please supply a project direcory or '/' for the root dir"
+       elif [ $1 = '/' ]; then
+          cd /home/roger/projects
+       elif [ $1 = 'go' ]; then
+          cd /home/roger/go/src/$2
+       else
+          cd /home/roger/projects/$1
+      fi
+}
+
+searchNotes() {
+    cd /home/roger/Documents/notes
+    
+    if [ $# -eq 0 ]; then
+        vim `fzf --preview="cat {}" --preview-window=right:70%:wrap`
+    else
+        vim `grep -rnw '/home/roger/Documents/notes' -e $1 | cut -f1 -d":" | fzf --preview="cat {}" --preview-window=right:70%:wrap`
+    fi
+}
+
+note() {
+    cd /home/roger/Documents/notes
+    if [ $# -gt 0 ]; then
+        case $1 in
+            -n) 
+                case "$2" in
+                    "")
+                        NAME=$(date +"%F")
+                        TODAY=$(date +"%A-%b-%d-%Y")
+                        touch $NAME
+                        echo "$TODAY \n\n" >> $NAME
+                        vim $NAME
+                        ;
+                        shift;;
+                    *)
+                        NAME=$2
+                        touch $NAME
+                        vim $NAME
+                        ;
+                        shift;;
+                esac;;
+            -s)
+                case "$2" in
+                    "")
+                        vim `fzf --preview="cat {}" --preview-window=right:70%:wrap`
+                        ;
+                        shift;;
+                    *)
+                        vim `grep -rnw '/home/roger/Documents/notes' -e $2 | cut -f1 -d":" | fzf --preview="cat {}" --preview-window=right:70%:wrap`
+                        ;
+                        shift;;
+                esac;;
+        esac
+    fi
+}
+
+te() {
+    if [ $# -gt 0 ]; then
+        case $1 in
+            -n)
+                case "$2" in
+                    "")
+                        echo "no args"; shift ;;
+                    *)
+                        echo "-n sent with argument $2"; shift ;;
+                esac ;;
+            -s)
+                echo "-s sent with argument $2" ;;
+        esac
+    fi
+}
+
+weather() {
+       if [ $# -eq 0 ]; then
+          curl wttr.in/27298
+       else
+          curl wttr.in/$1
+       fi
+}
