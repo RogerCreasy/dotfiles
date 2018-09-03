@@ -111,3 +111,5 @@ if [ -f '/home/roger/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 PATH=$PATH:/home/roger/tools/fuz
 
+# Java
+PATH=$PATH:/usr/bin/java
