@@ -1,7 +1,7 @@
 alias homesteadup='cd ~/Homestead/ && vagrant up'
-alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias myip='curl ipinfo.io/ip'
 alias nowhite='for file in *;do mv $file ${file// /_};done'
-alias pu='phpunit'
+alias pu='phpunit --color=always'
 alias vpu='./vendor/bin/phpunit'
 alias dockerup='systemctl start docker'
 alias vim='vimx'
@@ -13,6 +13,8 @@ project() {
           cd /home/roger/projects
        elif [ $1 = 'go' ]; then
           cd /home/roger/go/src/$2
+       elif [ $1 = '-w' ]; then
+          cd /home/roger/projects/work/$2
        else
           cd /home/roger/projects/$1
       fi
@@ -32,7 +34,7 @@ note() {
     cd /home/roger/Documents/notes
     if [ $# -gt 0 ]; then
         case $1 in
-            -n) 
+            -n | --new ) 
                 case "$2" in
                     "")
                         NAME=$(date +"%F")
@@ -47,7 +49,7 @@ note() {
                         vim $NAME
                         ;;
                 esac;;
-            -s)
+            -s | --search )
                 case "$2" in
                     "")
                         vim `fzf --preview="cat {}" --preview-window=right:70%:wrap | sort -k9`
@@ -56,25 +58,47 @@ note() {
                         vim `grep -rnw '/home/roger/Documents/notes' -e $2 | cut -f1 -d":" | fzf --preview="cat {}" --preview-window=right:70%:wrap`
                         ;;
                 esac;;
+            -a | --archive )
+               case "$2" in
+                   "")
+                         echo "you must include the files to archive. i.e. note -a 2018-10-*"
+                         ;;
+                   *)
+                         for FILE in $2
+                         do
+                           echo -e "\n[Index](index.md)" >> $FILE
+                           echo -e "[$FILE]($FILE)<br>" >> kb/journal/index.md
+                           mv $FILE kb/journal/
+                         done
+                         ;;
+               esac;;
+            -h | --help )
+               echo -e "
+                   create a new \`note -n [name of note]\`
+                   create a default journal note, named with the current date, exclude the [name of note]\n
+                   search notes \`note -s \"[search term]\"\` (note the search term is inside \"s\n
+                   archive notes \'note -a [file(s) to archive\' 
+                   for example, to archive the October 2018 journal files enter \'note -a 2018-10-*\' 
+               "
         esac
     else
-        echo "a switch is required. -s for search, -n for new"
+        echo "a switch is required. -s for search, -n for new, -a for archive"
     fi
 }
 
-te() {
+servemd() {
     if [ $# -gt 0 ]; then
         case $1 in
-            -n)
-                case "$2" in
-                    "")
-                        echo "no args"; shift ;;
-                    *)
-                        echo "-n sent with argument $2"; shift ;;
-                esac ;;
-            -s)
-                echo "-s sent with argument $2" ;;
+            -kb)
+                cd ~/Documents/notes/kb
+                grip index.md
+                ;;
+            *)
+                grip $1
+                ;;
         esac
+    else
+        grip index.md
     fi
 }
 

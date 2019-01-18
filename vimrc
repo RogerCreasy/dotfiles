@@ -1,6 +1,8 @@
 set nocompatible              " be iMprovke, required
 filetype off                  " required
 
+filetype plugin on
+
 "=== Pull in Plugins File ==="
 
 so ~/.vim/vimplugins.vim
@@ -63,11 +65,13 @@ set incsearch                           "incrementally highlight search results"
     let g:grep_cmd_opts = '--line-numbers --noheading'
 
     "---- PHPCS ----"
-    let g:phpqa_codesniffer_args = "--standard=PSR2"
+"    let g:phpqa_codesniffer_args = "--standard=PSR2"
+"    Don't run messdetector on save (default = 1)
+     let g:phpqa_messdetector_autorun = 0
 
     "---- Syntastic ----"
     let g:syntastic_php_checkers = ['php', 'phpcs']
-    let g:syntastic_php_phpcs_args = "--standard=PSR2 -n"
+"    let g:syntastic_php_phpcs_args = "--standard=PSR2 -n"
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 0
     let g:syntastic_check_on_open = 1
@@ -109,7 +113,7 @@ set incsearch                           "incrementally highlight search results"
 nmap <leader>ev :e ~/.vimrc<cr>
 
 "edit aliases
-nmap <leader>ea :e ~/.aliases<cr>
+nmap <leader>ea :e ~/dotfiles/aliases<cr>
 
 "edit plugins
 nmap <leader>ep :e ~/.vim/vimplugins.vim<cr>
@@ -135,6 +139,9 @@ nmap <C-f> :CtrlPMRUFiles<cr>
 nmap <leader>bt :bufdo tab split<CR>
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
+"spell checking
+nmap <leader>spell :setlocal spell spelllang=en_us<CR>
+
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
@@ -143,8 +150,17 @@ nnoremap <F4> :let _s=@/<Bar>:%s/^\s\+//e<Bar>:let @/=_s<Bar><CR>
 
 " CS Fixer 
 nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR> 
-nmap  ^[2 :lopen<cr>
-nmap ^[3 :lclose<cr>
+"nmap <C-o> :lopen<cr>
+nmap <C-c> :lclose<cr>
+
+" Surround text with ()
+xnoremap <leader>s( xi()<Esc>P
+
+" Surround text with []
+xnoremap <leader>s[ xi[]<Esc>P
+
+" Surround text  with {}
+xnoremap <leader>s{ xi()<Esc>P
 
 "---- Laravel-Specific ----"
 nmap <leader>l4r :e app/Http/routes.php<cr>
@@ -152,6 +168,12 @@ nmap <leader>lr :e routes/web.php<cr>
 nmap <leader>lm !php artisan make:
 nmap <leader>lc :CtrlP app/Http/Controllers/<cr>
 nmap <leader>lv :CtrlP resources/views/<cr>
+
+"---- PHP ----"
+"php code completion w/ctrl-x ctrl-o (or p)
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+set omnifunc=syntaxcomplete#Complete
 
 "---- GOLANG-Specific ----"
 augroup go
@@ -180,13 +202,47 @@ augroup go
 augroup END
 
 "======= VimWiki notetaking
+nmap <Leader>wn <Plug>VimwikiNextLink
 let wiki_1 = {}
-let wiki_1.path = '~/Documents/notes/'
+let wiki_1.path = '~/Documents/notes/kb'
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md'
 
 let g:vimwiki_list = [wiki_1]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+"======= Livedown Markdown Server ====="
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+" the browser to use
+let g:livedown_browser = "Firefox"
+
+"======= cscope ====="
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+        " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+endif
+
+nmap <C-\>s :cs find s =expand("")
+nmap <C-\>g :cs find g =expand("")
+nmap <C-\>c :cs find c =expand("")
+nmap <C-\>t :cs find t =expand("")
+nmap <C-\>e :cs find e =expand("")
+nmap <C-\>f :cs find f =expand("")
+nmap <C-\>i :cs find i ^=expand("")$
+nmap <C-\>d :cs find d =expand("")
+
+set nohlsearch
 
 "=======  AUTO-COMMANDS ====="
 

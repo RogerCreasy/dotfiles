@@ -91,10 +91,13 @@ PATH=$PATH:/home/rcreasy/tools/tmux-powerline:~/home/rcreasy/.local/bin
 if [ -d "/home/rcreasy/" ]; then
     PATH=$PATH:/home/rcreasy/.composer/vendor/bin/:/home/rcreasy/.composer/vendor/friendsofphp/php-cs-fixer
 elif [ -d "/home/roger/" ]; then
-    PATH=$PATH:/home/roger/.config/composer/vendor:/home/roger/.config/composer/vendor/friendsofphp/php-cs-fixer
+    PATH=$PATH:/home/roger/.config/composer/vendor:/home/roger/.config/composer/vendor/bin
 else
     echo "user not found"
 fi    
+
+# PHPCS
+PATH=$PATH:/home/roger/.config/composer/vendor/squizlabs/php_codesniffer/bin
 
 # GOLANG
 PATH=$PATH:/usr/local/go/bin
@@ -113,3 +116,7 @@ PATH=$PATH:/home/roger/tools/fuz
 
 # Java
 PATH=$PATH:/usr/bin/java
+# export JAVA_HOME=/usr/bin/java
+
+# Flutter
+PATH=$PATH:/home/roger/Tools/flutter/bin
