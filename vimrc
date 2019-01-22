@@ -242,7 +242,7 @@ nmap <C-\>f :cs find f =expand("")
 nmap <C-\>i :cs find i ^=expand("")$
 nmap <C-\>d :cs find d =expand("")
 
-set nohlsearch
+"set nohlsearch
 
 "=======  AUTO-COMMANDS ====="
 
