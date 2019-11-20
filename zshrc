@@ -5,7 +5,7 @@ elif [ -e "/home/rcreasy/.oh-my-zsh" ]; then
     export ZSH=/home/rcreasy/.oh-my-zsh
 else
     echo "oh-my! oh-my-zsh not found"
-fi    
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -73,10 +73,10 @@ if [ -e "/home/roger/.oh-my-zsh" ]; then
     alias config='/usr/bin/git --git-dir=/home/roger/dotfiles/.git --work-tree=/home/roger/dotfiles'
 elif [ -e "/home/rcreasy/.oh-my-zsh" ]; then
     alias config='/usr/bin/git --git-dir=/home/rcreasy/dotfiles/.git --work-tree=/home/rcreasy/dotfiles'
-    
+
 else
     echo "user not found"
-fi    
+fi
 
 # tmux-powerline
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
@@ -84,7 +84,7 @@ PATH=$PATH:/home/rcreasy/tools/tmux-powerline:~/home/rcreasy/.local/bin
 
 # tmuxinator
 #
-#source $HOME/dotfiles/bin/tmuxinator.zsh
+source $HOME/.bin/tmuxinator.zsh
 
 # Composer
 
@@ -94,7 +94,7 @@ elif [ -d "/home/roger/" ]; then
     PATH=$PATH:/home/roger/.config/composer/vendor:/home/roger/.config/composer/vendor/bin
 else
     echo "user not found"
-fi    
+fi
 
 # PHPCS
 PATH=$PATH:/home/roger/.config/composer/vendor/squizlabs/php_codesniffer/bin
@@ -115,8 +115,21 @@ if [ -f '/home/roger/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '
 PATH=$PATH:/home/roger/tools/fuz
 
 # Java
-PATH=$PATH:/usr/bin/java
-# export JAVA_HOME=/usr/bin/java
+PATH=$PATH:/usr/java/jre1.8.0_211/bin
+export JAVA_HOME=/usr/java/jre1.8.0_211
 
 # Flutter
 PATH=$PATH:/home/roger/Tools/flutter/bin
+
+# roger home bin
+PATH=$PATH:/home/roger/.local/bin
+
+PATH="/home/roger/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/roger/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/roger/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/roger/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/roger/perl5"; export PERL_MM_OPT;
+
+# z directory jump
+. /home/roger/Tools/Z/z.sh
+

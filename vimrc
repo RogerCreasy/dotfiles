@@ -1,7 +1,7 @@
-set nocompatible              " be iMprovke, required
+set nocompatible              " be iMprove, required
 filetype off                  " required
 
-filetype plugin on
+"filetype plugin on
 
 "=== Pull in Plugins File ==="
 
@@ -9,6 +9,8 @@ so ~/.vim/vimplugins.vim
 
 
 syntax enable
+
+runtime macros/matchit.vim
 
 set backspace=indent,eol,start           "make backspace behave as it does in other editors"
 set number                               "show line numbers in files"
@@ -46,7 +48,7 @@ set linespace=30
 "======= SCREEN MANAGEMENT ==="
 
 set splitright                         "default create new split to the right of the current buffer"
-nmap <C-H> <C-W><C-H>                  
+nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 "======= SEARCH  ======"
@@ -124,11 +126,14 @@ nmap <leader>es :e ~/.vim/UltiSnips/<cr>
 "edit zshrc
 nmap <leader>ez :e ~/.zshrc<cr>
 
+"edit gitconfig
+nmap <leader>eg :e ~/.gitconfig<cr>
+
 " write, then close the buffer
 nmap <leader>wbd :w<cr> :bd<cr>
 
 "unhighlight search results"
-nmap <leader><space> :nohlsearch<cr>           
+nmap <leader><space> :nohlsearch<cr>
 
 "simplify NERDTree; set CTR-1 to toggle it"
 nmap 1 :NERDTreeToggle<cr>
@@ -148,8 +153,11 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "Remove all leading whitespace by pressing F4
 nnoremap <F4> :let _s=@/<Bar>:%s/^\s\+//e<Bar>:let @/=_s<Bar><CR>
 
-" CS Fixer 
-nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR> 
+"Toggle show/hide hidden chars
+noremap <leader>hidden :set list!<CR>
+
+" CS Fixer
+nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
 "nmap <C-o> :lopen<cr>
 nmap <C-c> :lclose<cr>
 
@@ -162,6 +170,9 @@ xnoremap <leader>s[ xi[]<Esc>P
 " Surround text  with {}
 xnoremap <leader>s{ xi()<Esc>P
 
+" Surround text  with ""
+xnoremap <leader>s" xi""<Esc>P
+
 "---- Laravel-Specific ----"
 nmap <leader>l4r :e app/Http/routes.php<cr>
 nmap <leader>lr :e routes/web.php<cr>
@@ -173,7 +184,7 @@ nmap <leader>lv :CtrlP resources/views/<cr>
 "php code completion w/ctrl-x ctrl-o (or p)
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-set omnifunc=syntaxcomplete#Complete
+"set omnifunc=syntaxcomplete#Complete
 
 "---- GOLANG-Specific ----"
 augroup go
@@ -184,19 +195,19 @@ augroup go
     autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
     " :GoTest
     autocmd FileType go nmap <leader>t  <Plug>(go-test)
-    
+
     " :GoRun
     autocmd FileType go nmap <leader>r  <Plug>(go-run)
-    
+
     " :GoDoc
     autocmd FileType go nmap <Leader>d <Plug>(go-doc)
-    
+
     " :GoCoverageToggle
     autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-    
+
     " :GoInfo
     autocmd FileType go nmap <Leader>i <Plug>(go-info)
-    
+
     " :GoMetaLinter
     autocmd FileType go nmap <Leader>l <Plug>(go-metalinter)
 augroup END
@@ -249,7 +260,16 @@ nmap <C-\>d :cs find d =expand("")
 augroup autosourcing
     autocmd!
     autocmd BufWritePost .vimrc source %
-augroup END 
+augroup END
+
+" twig templates - php syntax formatting
+augroup twig_ft
+    au!
+    autocmd BufNewFile,BufRead *.html.twig   set syntax=php
+augroup END
+
+" Trim whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
 
 "====== Notes/Tips ======="
 "

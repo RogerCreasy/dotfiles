@@ -23,23 +23,25 @@ Plugin 'joonty/vim-phpqa'
 "Plugin 'rking/ag.vim'
 "Plugin 'skwp/greplace.vim'
 " snipmate and its dependencies (dependencies first)
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'garbas/vim-snipmate'
 " Golang plugins
 Plugin 'fatih/vim-go'
 " PHP CS Fixer
 Plugin 'stephpy/vim-php-cs-fixer'
 " Markdown Preview in browser
-Plugin 'shime/vim-livedown'
+"Plugin 'shime/vim-livedown'
 " Ultisnips
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 " Vim IDE Perl
 Plugin 'vim-scripts/perl-support.vim'
 "find syntax highlighting issues
 Plugin 'vim-scripts/SyntaxAttr.vim'
 " VimWiki
-Plugin 'vimwiki/vimwiki'
+"Plugin 'vimwiki/vimwiki'
+" Ansible plugin "
+Plugin 'pearofducks/ansible-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
